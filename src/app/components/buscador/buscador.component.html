@@ -1,1 +1,13 @@
-<p>buscador works!</p>
+<div class="searchModule">
+    <form autocomplete="off" (submit)="buscar()">
+        <input type="text" name="nombre" placeholder="Qué película buscas" [(ngModel)]="searchedmovie">
+        <button><img src="./assets/svg/search-ico.svg" alt="Buscar"></button>
+    </form>
+    <div class="searchResultContent">
+        <ul>
+            <li *ngFor="let movie of searchResult">
+                <a href="#">{{movie.title}}</a>
+            </li>
+        </ul>
+    </div>
+</div>

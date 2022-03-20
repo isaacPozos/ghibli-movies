@@ -9,6 +9,7 @@ import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { AppRoutingModule } from './app-routing.module';
 import { BuscadorComponent } from './components/buscador/buscador.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { BuscadorComponent } from './components/buscador/buscador.component';
   imports: [
     AppRoutingModule,
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
