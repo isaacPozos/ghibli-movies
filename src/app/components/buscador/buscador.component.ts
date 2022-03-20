@@ -13,21 +13,23 @@ export class BuscadorComponent implements OnInit {
 
   searchedMovie: string = '';
   searchResult: Movie[] | undefined = [];
-
   debouncer: Subject<string> = new Subject(); // Creo un observable para el input
+  sugerencias: boolean = true;
   
   constructor( private service: GhibliService) {}
   ngOnInit(): void {
-
-    this.debouncer.pipe(debounceTime(500)).subscribe( word => {
-      console.log('debouncer:', word);
+    
+    this.debouncer.pipe(debounceTime(100)).subscribe( word => {
+      this.searchResult = this.searchedMovie === ''? [] : this.service.filterMovies(this.searchedMovie.toLocaleLowerCase());
+      this.sugerencias = this.searchResult? this.searchResult.length===0? this.searchedMovie === ''? true: false: true : true;
+      console.log(this.searchResult?.length);
     });
   }
 
   buscar(){
-
-    this.searchResult = this.service.filterMovies(this.searchedMovie.toLocaleLowerCase());
-    
+    if(this.searchedMovie === ''){
+      
+    }      
   }
 
   intentarBuscar(){

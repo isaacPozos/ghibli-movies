@@ -1,10 +1,11 @@
 <div class="searchModule">
     <form autocomplete="off" (submit)="buscar()">
-        <input type="text" name="nombre" placeholder="Qué película buscas" [(ngModel)]="searchedmovie">
+        <input type="text" name="nombre" #peliBuscada placeholder="Qué película buscas" (input)="intentarBuscar()" [(ngModel)]="searchedMovie">
         <button><img src="./assets/svg/search-ico.svg" alt="Buscar"></button>
     </form>
     <div class="searchResultContent">
         <ul>
+            <li *ngIf="!sugerencias">No se encuentra la película</li>
             <li *ngFor="let movie of searchResult">
                 <a href="#">{{movie.title}}</a>
             </li>
