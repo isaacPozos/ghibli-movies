@@ -17,7 +17,6 @@ export class InicioComponent implements OnInit {
       error: err => {
         console.log('Error:');
         console.log(err);
-        this.movies = [];
       }
     });
   }
