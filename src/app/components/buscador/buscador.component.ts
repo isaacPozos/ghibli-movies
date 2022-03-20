@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Subject } from 'rxjs';
+import { debounceTime } from 'rxjs/operators';
 import { Movie } from 'src/app/interfaces/movies.interfaces';
 import { GhibliService } from 'src/app/services/ghibli.service';
 
@@ -9,20 +11,27 @@ import { GhibliService } from 'src/app/services/ghibli.service';
 })
 export class BuscadorComponent implements OnInit {
 
-  searchedmovie: string = '';
+  searchedMovie: string = '';
   searchResult: Movie[] | undefined = [];
+
+  debouncer: Subject<string> = new Subject(); // Creo un observable para el input
   
   constructor( private service: GhibliService) {}
   ngOnInit(): void {
+
+    this.debouncer.pipe(debounceTime(500)).subscribe( word => {
+      console.log('debouncer:', word);
+    });
   }
 
   buscar(){
-    const movies =this.service.allMovies;
-    this.searchResult = movies?.filter(movie => {
-      const title = movie.title.toLowerCase();
-       return title.includes(this.searchedmovie.toLocaleLowerCase());
-    });
-       
+
+    this.searchResult = this.service.filterMovies(this.searchedMovie.toLocaleLowerCase());
     
   }
+
+  intentarBuscar(){
+    this.debouncer.next(this.searchedMovie);
+  }  
+
 }

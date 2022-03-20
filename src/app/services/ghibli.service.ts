@@ -11,15 +11,20 @@ export class GhibliService {
   private endpoint:string = 'https://ghibliapi.herokuapp.com';
   constructor( private http: HttpClient) { }
 
-  movies: Movie[] | undefined;
-  // Getter para obtenerlo globalmente
-  get allMovies(){
-    return this.movies;
-  }
+  movies?: Movie[];
 
   getAllMovies(): Observable<Movie[]>{
       return this.http.get<Movie[]>(`${this.endpoint}/films/`)
             .pipe( tap( movies => this.movies = movies) );
+  }
+
+  filterMovies(word: string){
+    const arrMovies = this.movies?.filter(movie => {
+      const title = movie.title.toLowerCase();
+       return title.includes(word.toLocaleLowerCase());
+    });
+    return  arrMovies; 
+    
   }
 
 }
