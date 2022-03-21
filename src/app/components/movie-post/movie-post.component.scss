@@ -1,0 +1,54 @@
+.moviePostBlock {
+    position: relative;
+}
+
+.actions {
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 35px;
+    width: 100%;
+}
+
+li {
+    box-sizing: content-box;
+    padding: 5px 10px;
+    list-style: none;
+    height: 30px;
+    width: 25px;
+}
+
+.fullHart {
+    transition: fill 0.3s ease-out;
+    fill: rgba(255, 255, 255, 0);
+    .isFav & {
+        fill: rgba(255, 255, 255, 1);
+    }
+}
+
+.Hartline {
+    fill: #FFFFFF
+}
+
+svg {
+    width: 100%;
+}
+
+ul {
+    justify-content: flex-end;
+    display: flex;
+    gap: 0 5px;
+    padding: 0;
+    margin: 0;
+}
+
+@media(min-width: 992px) {
+    li {
+        box-sizing: content-box;
+        padding: 5px 10px;
+        list-style: none;
+        height: 40px;
+        width: 42px;
+    }
+    .actions {
+        height: 50px;
+    }
+}

@@ -19,6 +19,7 @@ export class InicioComponent implements OnInit {
         console.log(err);
       }
     });
+    console.log(this.service.movies);
   }
 
   ngOnInit(): void {
