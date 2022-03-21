@@ -15,6 +15,7 @@ export class BuscadorComponent implements OnInit {
   searchResult: Movie[] | undefined = [];
   debouncer: Subject<string> = new Subject(); // Creo un observable para el input
   sugerencias: boolean = true;
+  openSearch: boolean = false;
   
   constructor( private service: GhibliService) {}
   ngOnInit(): void {
@@ -34,6 +35,10 @@ export class BuscadorComponent implements OnInit {
 
   intentarBuscar(){
     this.debouncer.next(this.searchedMovie);
-  }  
+  } 
+
+  mostrarBuscador(){
+    this.openSearch = !this.openSearch;    
+  }
 
 }
