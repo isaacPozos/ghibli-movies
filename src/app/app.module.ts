@@ -10,6 +10,7 @@ import { FooterComponent } from './shared/footer/footer.component';
 import { AppRoutingModule } from './app-routing.module';
 import { BuscadorComponent } from './components/buscador/buscador.component';
 import { FormsModule } from '@angular/forms';
+import { MoviePostComponent } from './components/movie-post/movie-post.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { FormsModule } from '@angular/forms';
     HeaderComponent,
     FooterComponent,
     BuscadorComponent,
+    MoviePostComponent,
   ],
   imports: [
     AppRoutingModule,
