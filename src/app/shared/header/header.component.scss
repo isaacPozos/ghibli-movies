@@ -1,0 +1,22 @@
+header {
+    padding: 150px 10% 30px;
+    .logoWrp {
+        margin: 0 auto;
+        width: 250px;
+    }
+}
+
+img {
+    display: inline-block;
+    max-width: 100%;
+}
+
+@media(min-width: 768px) {
+    header {
+        padding-top: 100px;
+        .logoWrp {
+            width: 280px;
+            margin: 0;
+        }
+    }
+}
