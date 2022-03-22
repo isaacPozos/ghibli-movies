@@ -48,12 +48,10 @@ export class GhibliService {
     if(id === -1) {
       favs.push(titulo);
       localStorage.setItem('favs',JSON.stringify(favs));
-      console.log('existe, borrar',favs);
       return true;
     }else{
       favs.splice(id,1);
       localStorage.setItem('favs',JSON.stringify(favs));
-      console.log('existe, borrar',favs);
       return false;
     }
 
