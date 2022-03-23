@@ -19,9 +19,13 @@ export class MovieDescriptionComponent implements OnInit {
   ngOnInit(): void {
     let idObtenida: string = '';
     this.activatedRoute.params.subscribe( ({id}) => idObtenida = id );
-    this.service.getMovie(idObtenida).subscribe( movie => {
-      this.pelicula = movie;
-      console.log(this.pelicula)
+    this.service.getMovie(idObtenida).subscribe({
+      next: movie =>  this.pelicula = movie,
+      error: err => {
+        console.log('Error:');
+        console.log(err);
+        this.pelicula = { id: '', title: ''};
+      }
     });
 
   }

@@ -1,4 +1,9 @@
-<div class="gridMovies">
+<div class="gridMovies" *ngIf="cargalibreria;else errorCarga">
     <app-movie-post [movie]="movie" *ngFor="let movie of movies" class="movie"></app-movie-post>
 
 </div>
+<ng-template #errorCarga>
+    <div class="cargaError">
+        Hubo un error al cargar los datos.
+    </div>
+</ng-template>
