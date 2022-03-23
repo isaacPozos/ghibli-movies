@@ -4,7 +4,7 @@
 </button>
 <div class="searchForm" [ngClass]="openSearch? 'open':''">
     <div class="searchModule">
-        <form autocomplete="off" (submit)="buscar()">
+        <form autocomplete="off">
             <label for="nombre">Buscar</label>
             <input type="text" name="nombre" #peliBuscada placeholder="Qué película buscas" (input)="intentarBuscar()" [(ngModel)]="searchedMovie">
         </form>
