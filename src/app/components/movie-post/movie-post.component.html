@@ -1,5 +1,5 @@
 <div class="moviePostBlock">
-    <div class="imgMovie">
+    <div class="imgMovie" [routerLink]="['movie', movie.id]">
         <img [src]="movie.image" [alt]="movie.title">
     </div>
     <div class="actions">

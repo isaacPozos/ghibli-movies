@@ -46,6 +46,7 @@ footer {
 
 .imgMovie {
     img {
+        cursor: pointer;
         display: block;
         width: 100%;
     }
@@ -75,6 +76,9 @@ footer {
 }
 
 @media(min-width: 992px) {
+    body {
+        font-size: 18px;
+    }
     .allBackground {
         background: url('/assets/bannerhome/slide1.jpg') no-repeat center top;
         background-size: cover;

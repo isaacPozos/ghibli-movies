@@ -20,13 +20,16 @@ export class BuscadorComponent implements OnInit {
   constructor( private service: GhibliService) {}
   ngOnInit(): void {
     
+    
+    
     this.debouncer.pipe(debounceTime(200)).subscribe( word => {
       this.searchResult = this.searchedMovie === ''? [] : this.service.filterMovies(this.searchedMovie.toLocaleLowerCase());
       this.sugerencias = this.searchResult? this.searchResult.length===0? this.searchedMovie === ''? true: false: true : true;      
     });
   }
-
+  
   intentarBuscar(){
+    console.log(this.service.movies);
     this.debouncer.next(this.searchedMovie);
   } 
 

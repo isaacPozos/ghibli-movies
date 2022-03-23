@@ -12,7 +12,7 @@
             <ul>
                 <li *ngIf="!sugerencias">No se encuentra la película</li>
                 <li *ngFor="let movie of searchResult" class="searchSugest">
-                    <a href="#">
+                    <a (click)="mostrarBuscador()" [routerLink]="['movie', movie.id]">
                         <img [src]="movie.movie_banner" [alt]="movie.title">
                         <span class="titleRes">
                             {{movie.title}}
