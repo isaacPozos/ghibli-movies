@@ -1,0 +1,27 @@
+<div class="MovieContainer">
+    <div class="regresarBtn"><a [routerLink]="['']">Regresar</a></div>
+    <div class="row" *ngIf="pelicula">
+        <div class="imgMovie">
+            <img [src]="pelicula.image" [alt]="pelicula.title">
+        </div>
+        <div class="movieDesc">
+            <div class="titleDescr">
+                <h1>{{pelicula.title}}</h1>
+                <p><small>{{pelicula.original_title}}</small></p>
+            </div>
+            <ul class="data">
+                <li>Director: {{pelicula.director}}</li>
+                <li>Producer: {{pelicula.producer}}</li>
+                <li>año: {{pelicula.release_date}}</li>
+            </ul>
+            <div class="description">
+                <p>{{pelicula.description}}</p>
+            </div>
+        </div>
+    </div>
+    <div class="row" #errorInfo *ngIf="!pelicula">
+        <div class="titleDescr">
+            <h1>Al parecer no existe esa película</h1>
+        </div>
+    </div>
+</div>

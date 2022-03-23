@@ -1,0 +1,73 @@
+.data {
+    list-style: none;
+    margin: 20px 0;
+    padding: 0;
+}
+
+.imgMovie {
+    img {
+        -webkit-box-shadow: 0px 10px 9px -5px rgba(0, 0, 0, 0.50);
+        box-shadow: 0px 10px 9px -5px rgba(0, 0, 0, 0.50);
+        border: solid 2px rgba(255, 255, 255, 0.7);
+        box-sizing: content-box;
+        cursor: default;
+        display: block;
+        width: 100%;
+    }
+}
+
+.MovieContainer {
+    background: -moz-linear-gradient(top, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 100%);
+    background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 100%);
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 100%);
+    padding: 30px 5%;
+}
+
+.movieDesc {
+    color: #FFF;
+}
+
+.regresarBtn {
+    padding-bottom: 40px;
+    a {
+        color: #FFF;
+    }
+}
+
+.titleDescr {
+    padding: 20px 0;
+    h1 {
+        line-height: 1.1em;
+        margin: 0;
+    }
+    p {
+        margin: 0;
+    }
+}
+
+@media(min-width: 768px) {
+    .imgMovie {
+        flex-basis: 250px;
+    }
+    .MovieContainer {
+        padding-top: 50px;
+        min-height: 50vh;
+    }
+    .movieDesc {
+        flex-basis: 50%;
+    }
+    .row {
+        display: flex;
+        gap: 20px;
+    }
+}
+
+@media(min-width: 768px) {
+    .MovieContainer {
+        padding-top: 60px;
+    }
+    .row {
+        max-width: 900px;
+        margin: 0 auto;
+    }
+}

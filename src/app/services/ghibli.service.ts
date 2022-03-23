@@ -18,6 +18,10 @@ export class GhibliService {
             .pipe( tap( movies => this.movies = movies) );
   }
 
+  getMovie(id: string):Observable<Movie>{
+    return this.http.get<Movie>(`${this.endpoint}/films/${id}`);
+  }
+
   filterMovies(word: string){
     const arrMovies = this.movies?.filter(movie => {
       const title = movie.title.toLowerCase();

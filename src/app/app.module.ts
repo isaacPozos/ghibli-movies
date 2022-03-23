@@ -11,6 +11,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { BuscadorComponent } from './components/buscador/buscador.component';
 import { FormsModule } from '@angular/forms';
 import { MoviePostComponent } from './components/movie-post/movie-post.component';
+import { MovieDescriptionComponent } from './pages/movie-description/movie-description.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { MoviePostComponent } from './components/movie-post/movie-post.component
     FooterComponent,
     BuscadorComponent,
     MoviePostComponent,
+    MovieDescriptionComponent,
   ],
   imports: [
     AppRoutingModule,
