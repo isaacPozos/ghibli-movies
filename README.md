@@ -20,11 +20,17 @@ Escribe `ng test` para ejecutar las pruebas unitarias.
 
 El proyecto es sobre las películas que han hecho el Estudio Ghibli por lo que utilicé un diseño muy visual, tanto al sitio como al resultado de las búsquedas.
 
-Mi principal reto fué la implementación de la sugerencia de búsqueda como autocompletado, mi solución fué crear un observable al input para poder suscribirme, utilicé un debounceTime de 0.3s para retrasar un poco la búsqueda en cada tecla apretada para evitar la saturación del proceso de búsqueda.
+Uno de mis retos fué la implementación de la sugerencia de búsqueda como autocompletado, mi solución fué crear un observable al text input para poder suscribirme a él, utilicé un debounceTime de 0.3s para retrasar un poco la ejecución de búsqueda al teclear cada letra y así evitar la saturación del proceso de búsqueda.
 
-La parte que creo que necesita mejorar es en cuanto la ubicación del componente de búsqueda, preferiría que estuviera más integrado al sitio para mejorar el acceso a ésta utilidad y mejoraría el filtrado de las películas por palabras.
+La parte que creo que necesita mejorar es en cuanto la ubicación del componente de búsqueda, preferiría que estuviera más integrado al sitio para mejorar el acceso a ésta utilidad. También mejoraría el filtrado de las películas por palabras no tanto por letra.
 
-Traté de mantener la arquitectura agrupada en módulos (páginas, Componentes compartidos). Toda la funcionalidad con la Data recibida de la API está centralizada en el servicio para que pueda ser mantenida y consumida fácilmente.
+Traté de mantener la arquitectura agrupada en módulos (páginas, Componentes compartidos, Servicios, interfaces) para tener mejor organización. Toda la funcionalidad con la Data recibida de la API está centralizada en el servicio para que pueda ser mantenida y consumida fácilmente.
+
+Las pruebas Unitarias fué el mayor reto, nunca las había implementado, y aunque me pareció muy interesante, hay mucho que aún tengo que resolver y entender, pero éste primer acercamiento me mtivo a querer aprender más al respecto.
+
+## Heroku
+
+El sitio se puede ver en [ghibli-pozos.herokuapp.com](https://ghibli-pozos.herokuapp.com/).
 
 
 

@@ -26,12 +26,6 @@ export class BuscadorComponent implements OnInit {
     });
   }
 
-  buscar(){
-    if(this.searchedMovie === ''){
-      
-    }      
-  }
-
   intentarBuscar(){
     this.debouncer.next(this.searchedMovie);
   } 
