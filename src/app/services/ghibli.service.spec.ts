@@ -54,6 +54,24 @@ describe('Ghibli Service', ()=> {
 
     });
 
+    it('Debe obtener una película', (done: DoneFn)=>{
+        const MovieEsperada: Movie[] = [
+            { title: 'Tituo', id: 'ABC',  }
+        ];
+
+        httpClientSpy.get.and.returnValue(of(MovieEsperada));
+
+        service.getAllMovies().subscribe({
+            next: movie=>{
+                    expect(movie).toEqual(MovieEsperada);
+                    done();
+                },
+            error: done.fail
+            
+        });
+
+    });
+
     it('Switch Fav: Debe agregar o eliminar de favorito', ()=>{
         
         expect(service.switchFavorits('Nuevo Titulo')).withContext('No es favorito (falso), lo agrega (true)').toBeTruthy();
