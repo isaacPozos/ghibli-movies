@@ -24,7 +24,8 @@ export class MovieDescriptionComponent implements OnInit {
       error: err => {
         console.log('Error:');
         console.log(err);
-        this.pelicula = { id: '', title: ''};
+        this.pelicula = { id: 'Error', title: ''};
+        console.log(this.pelicula);
       }
     });
 

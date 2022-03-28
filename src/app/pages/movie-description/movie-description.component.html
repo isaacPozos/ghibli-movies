@@ -1,6 +1,6 @@
 <div class="MovieContainer">
     <div class="regresarBtn"><a [routerLink]="['']">Regresar</a></div>
-    <div class="row" *ngIf="pelicula.title!==''">
+    <div class="row" *ngIf="pelicula.id!=='Error'">
         <div class="imgMovie">
             <img [src]="pelicula.image" [alt]="pelicula.title">
         </div>
@@ -19,7 +19,7 @@
             </div>
         </div>
     </div>
-    <div class="row" #errorInfo *ngIf="pelicula.title===''">
+    <div class="row" #errorInfo *ngIf="pelicula.id==='Error'">
         <div class="titleDescr">
             <h1>Al parecer no existe esa película</h1>
         </div>
