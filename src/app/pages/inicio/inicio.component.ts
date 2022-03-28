@@ -14,7 +14,7 @@ export class InicioComponent implements OnInit {
   constructor( private service: GhibliService) {
     this.service.getAllMovies().subscribe({ 
       next: resp => {
-        this.movies = resp
+        this.movies = resp;
       }, 
       error: err => {
         console.log('Error:');

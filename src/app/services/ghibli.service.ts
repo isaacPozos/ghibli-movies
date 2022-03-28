@@ -23,6 +23,9 @@ export class GhibliService {
   }
 
   filterMovies(word: string){
+    if(!this.movies){
+      this.getAllMovies().subscribe();
+    }
     const arrMovies = this.movies?.filter(movie => {
       const title = movie.title.toLowerCase();
        return title.includes(word.toLocaleLowerCase());
